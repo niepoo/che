@@ -1,0 +1,18 @@
+kind: Template
+apiVersion: v1
+metadata:
+  name: openshift-oauth-client
+  annotations:
+    description: Che
+objects:
+- apiVersion: v1
+  kind: OAuthClient
+  metadata:
+    name: kc-client
+  secret: "secret123"
+  redirectURIs:
+    - ${REDIRECT_URI}
+  grantMethod: prompt
+parameters:
+- name: REDIRECT_URI
+  displayName: Redirect URI for OpenShift identity provider
