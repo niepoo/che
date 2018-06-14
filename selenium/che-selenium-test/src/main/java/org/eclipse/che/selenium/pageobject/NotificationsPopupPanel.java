@@ -38,11 +38,12 @@ public class NotificationsPopupPanel {
     PageFactory.initElements(seleniumWebDriver, this);
   }
 
-  private static final String PROGRESS_POPUP_PANEL_ID = "gwt-debug-popup-container";
+  private static final String PROGRESS_POPUP_PANEL_XPATH =
+      "//div[@id='gwt-debug-popup-container']/div";
   private static final String CLOSE_POPUP_IMG_XPATH =
       "//div[@id='gwt-debug-popup-container']/descendant::*[local-name()='svg'][2]";
 
-  @FindBy(id = PROGRESS_POPUP_PANEL_ID)
+  @FindBy(xpath = PROGRESS_POPUP_PANEL_XPATH)
   private WebElement progressPopupPanel;
 
   @FindBy(xpath = CLOSE_POPUP_IMG_XPATH)
